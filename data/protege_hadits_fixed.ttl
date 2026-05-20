@@ -1,0 +1,1526 @@
+@prefix ex: <http://proyekakhir.ac.id/concept/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel: <http://proyekakhir.ac.id/relation/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://proyekakhir.ac.id/relation/teksArab
+rel:teksArab rdf:type owl:AnnotationProperty .
+
+
+###  http://proyekakhir.ac.id/relation/teksLatin
+rel:teksLatin rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://proyekakhir.ac.id/relation/diriwayatkanOleh
+rel:diriwayatkanOleh rdf:type owl:ObjectProperty ;
+                     rdfs:domain ex:Hadis ;
+                     rdfs:range ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/relation/membahasTopik
+rel:membahasTopik rdf:type owl:ObjectProperty ;
+                  rdfs:domain ex:Hadis ;
+                  rdfs:range ex:Topik .
+
+
+###  http://proyekakhir.ac.id/relation/memilikiFrasa
+rel:memilikiFrasa rdf:type owl:ObjectProperty ;
+                  rdfs:domain ex:Hadis ;
+                  rdfs:range ex:Frasa .
+
+
+###  http://proyekakhir.ac.id/relation/munculDalam
+rel:munculDalam rdf:type owl:ObjectProperty ;
+                rdfs:domain ex:Frasa ;
+                rdfs:range ex:Hadis .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://proyekakhir.ac.id/relation/jumlahKarakterArab
+rel:jumlahKarakterArab rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ex:Hadis ;
+                       rdfs:range xsd:integer .
+
+
+###  http://proyekakhir.ac.id/relation/teks_arab
+rel:teks_arab rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Hadis ;
+              rdfs:range xsd:string .
+
+
+###  http://proyekakhir.ac.id/relation/teks_latin
+rel:teks_latin rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Hadis ;
+               rdfs:range xsd:string .
+
+
+###  http://proyekakhir.ac.id/relation/terjemahan
+rel:terjemahan rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Hadis ;
+               rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://proyekakhir.ac.id/concept/Perawi
+ex:Perawi rdf:type owl:Class .
+
+
+###  http://proyekakhir.ac.id/concept/Topik
+ex:Topik rdf:type owl:Class .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa
+ex:Frasa rdf:type owl:Class .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis
+ex:Hadis rdf:type owl:Class .
+
+
+###  http://proyekakhir.ac.id/concept/Perawi
+ex:Perawi rdf:type owl:Class ;
+          owl:deprecated "true"^^xsd:boolean .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://proyekakhir.ac.id/concept/Abdullah_bin_Masud
+ex:Abdullah_bin_Masud rdf:type owl:NamedIndividual ,
+                               ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Abu_Hurairah
+ex:Abu_Hurairah rdf:type owl:NamedIndividual ,
+                         ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Abu_Malik_Al-Asyari
+ex:Abu_Malik_Al-Asyari rdf:type owl:NamedIndividual ,
+                                ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Abu_Said_Al-Khudri
+ex:Abu_Said_Al-Khudri rdf:type owl:NamedIndividual ,
+                               ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Agama_adalah_Nasihat
+ex:Agama_adalah_Nasihat rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Aisyah
+ex:Aisyah rdf:type owl:NamedIndividual ,
+                   ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Allah_Tidak_Melihat_Bentuk_Rupamu
+ex:Allah_Tidak_Melihat_Bentuk_Rupamu rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Amalan_Sunnah_dan_Kewalian
+ex:Amalan_Sunnah_dan_Kewalian rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Anas_bin_Malik
+ex:Anas_bin_Malik rdf:type owl:NamedIndividual ,
+                           ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Berbakti_Kepada_Orang_Tua
+ex:Berbakti_Kepada_Orang_Tua rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Berbicara_Baik_atau_Diam
+ex:Berbicara_Baik_atau_Diam rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_10_1
+ex:Frasa_10_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kebaikan_dan_Dosa ;
+              rel:munculDalam ex:Hadis_10 ;
+              rel:jumlahKarakterArab 25 ;
+              rel:terjemahan "Kebaikan adalah akhlak yang mulia"@id ;
+              rel:teksArab "الْبِرُّ حُسْنُ الْخُلُقِ"@ar ;
+              rel:teksLatin "Al-birru husnul khuluqi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_10_2
+ex:Frasa_10_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kebaikan_dan_Dosa ;
+              rel:munculDalam ex:Hadis_10 ;
+              rel:jumlahKarakterArab 33 ;
+              rel:terjemahan "dan dosa adalah apa yang menggelisahkan hatimu"@id ;
+              rel:teksArab "وَالإِثْمُ مَا حَاكَ فِي نَفْسِكَ"@ar ;
+              rel:teksLatin "wal-itsmu maa haaka fii nafsika"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_10_3
+ex:Frasa_10_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kebaikan_dan_Dosa ;
+              rel:munculDalam ex:Hadis_10 ;
+              rel:jumlahKarakterArab 10 ;
+              rel:terjemahan "dan engkau benci"@id ;
+              rel:teksArab "وَكَرِهْتَ"@ar ;
+              rel:teksLatin "wa karihta"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_10_4
+ex:Frasa_10_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kebaikan_dan_Dosa ;
+              rel:munculDalam ex:Hadis_10 ;
+              rel:jumlahKarakterArab 32 ;
+              rel:terjemahan "jika hal itu diketahui orang lain"@id ;
+              rel:teksArab "أَنْ يَطَّلِعَ عَلَيْهِ النَّاسُ"@ar ;
+              rel:teksLatin "an yatthali'a 'alaihin-naasu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_11_1
+ex:Frasa_11_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Tolong_Menolong_dan_Menutup_Aib ;
+              rel:munculDalam ex:Hadis_11 ;
+              rel:jumlahKarakterArab 12 ;
+              rel:terjemahan "Barangsiapa yang melepaskan"@id ;
+              rel:teksArab "مَنْ نَفَّسَ"@ar ;
+              rel:teksLatin "Man naffasa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_11_2
+ex:Frasa_11_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Tolong_Menolong_dan_Menutup_Aib ;
+              rel:munculDalam ex:Hadis_11 ;
+              rel:jumlahKarakterArab 13 ;
+              rel:terjemahan "dari seorang mukmin"@id ;
+              rel:teksArab "عَنْ مُؤْمِنٍ"@ar ;
+              rel:teksLatin "'an mu'minin"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_11_3
+ex:Frasa_11_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Tolong_Menolong_dan_Menutup_Aib ;
+              rel:munculDalam ex:Hadis_11 ;
+              rel:jumlahKarakterArab 31 ;
+              rel:terjemahan "satu kesusahan dunia"@id ;
+              rel:teksArab "كُرْبَةً مِنْ كُرَبِ الدُّنْيَا"@ar ;
+              rel:teksLatin "kurbatan min kurabid-dunya"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_11_4
+ex:Frasa_11_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Tolong_Menolong_dan_Menutup_Aib ;
+              rel:munculDalam ex:Hadis_11 ;
+              rel:jumlahKarakterArab 22 ;
+              rel:terjemahan "Allah akan melepaskan darinya"@id ;
+              rel:teksArab "نَفَّسَ اللَّهُ عَنْهُ"@ar ;
+              rel:teksLatin "naffasallahu 'anhu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_11_5
+ex:Frasa_11_5 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Tolong_Menolong_dan_Menutup_Aib ;
+              rel:munculDalam ex:Hadis_11 ;
+              rel:jumlahKarakterArab 40 ;
+              rel:terjemahan "satu kesusahan di hari kiamat"@id ;
+              rel:teksArab "كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ"@ar ;
+              rel:teksLatin "kurbatan min kurabi yaumil-qiyaamah"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_12_1
+ex:Frasa_12_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Amalan_Sunnah_dan_Kewalian ;
+              rel:munculDalam ex:Hadis_12 ;
+              rel:jumlahKarakterArab 24 ;
+              rel:terjemahan "Barangsiapa memusuhi wali-Ku"@id ;
+              rel:teksArab "مَنْ عَادَى لِي وَلِيًّا"@ar ;
+              rel:teksLatin "Man 'aada lii waliyyan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_12_2
+ex:Frasa_12_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Amalan_Sunnah_dan_Kewalian ;
+              rel:munculDalam ex:Hadis_12 ;
+              rel:jumlahKarakterArab 28 ;
+              rel:terjemahan "maka sungguh Aku telah mengumumkan perang kepadanya"@id ;
+              rel:teksArab "فَقَدْ آذَنْتُهُ بِالْحَرْبِ"@ar ;
+              rel:teksLatin "faqad aadzantuhu bil-harb"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_13_1
+ex:Frasa_13_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbicara_Baik_atau_Diam ;
+              rel:munculDalam ex:Hadis_13 ;
+              rel:jumlahKarakterArab 19 ;
+              rel:terjemahan "Barangsiapa beriman"@id ;
+              rel:teksArab "مَنْ كَانَ يُؤْمِنُ"@ar ;
+              rel:teksLatin "Man kaana yu'minu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_13_2
+ex:Frasa_13_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbicara_Baik_atau_Diam ;
+              rel:munculDalam ex:Hadis_13 ;
+              rel:jumlahKarakterArab 29 ;
+              rel:terjemahan "kepada Allah dan hari akhir"@id ;
+              rel:teksArab "بِاللَّهِ وَالْيَوْمِ الآخِرِ"@ar ;
+              rel:teksLatin "billahi wal-yaumil-aakhiri"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_13_3
+ex:Frasa_13_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbicara_Baik_atau_Diam ;
+              rel:munculDalam ex:Hadis_13 ;
+              rel:jumlahKarakterArab 18 ;
+              rel:terjemahan "hendaklah ia berkata baik"@id ;
+              rel:teksArab "فَلْيَقُلْ خَيْرًا"@ar ;
+              rel:teksLatin "fal-yaqul khairan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_13_4
+ex:Frasa_13_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbicara_Baik_atau_Diam ;
+              rel:munculDalam ex:Hadis_13 ;
+              rel:jumlahKarakterArab 15 ;
+              rel:terjemahan "atau diam"@id ;
+              rel:teksArab "أَوْ لِيَصْمُتْ"@ar ;
+              rel:teksLatin "au liyashmut"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_14_1
+ex:Frasa_14_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Keutamaan_Bersuci_dan_Berdzikir ;
+              rel:munculDalam ex:Hadis_14 ;
+              rel:jumlahKarakterArab 10 ;
+              rel:terjemahan "Bersuci itu"@id ;
+              rel:teksArab "الطُّهُورُ"@ar ;
+              rel:teksLatin "Ath-thuhuuru"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_14_2
+ex:Frasa_14_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Keutamaan_Bersuci_dan_Berdzikir ;
+              rel:munculDalam ex:Hadis_14 ;
+              rel:jumlahKarakterArab 17 ;
+              rel:terjemahan "sebagian dari iman"@id ;
+              rel:teksArab "شَطْرُ الإِيمَانِ"@ar ;
+              rel:teksLatin "syathrul-iimaan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_14_3
+ex:Frasa_14_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Keutamaan_Bersuci_dan_Berdzikir ;
+              rel:munculDalam ex:Hadis_14 ;
+              rel:jumlahKarakterArab 19 ;
+              rel:terjemahan "dan ucapan Alhamdulillah"@id ;
+              rel:teksArab "وَالْحَمْدُ لِلَّهِ"@ar ;
+              rel:teksLatin "wal-hamdu lillaahi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_14_4
+ex:Frasa_14_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Keutamaan_Bersuci_dan_Berdzikir ;
+              rel:munculDalam ex:Hadis_14 ;
+              rel:jumlahKarakterArab 19 ;
+              rel:terjemahan "memenuhi timbangan"@id ;
+              rel:teksArab "تَمْلأُ الْمِيزَانَ"@ar ;
+              rel:teksLatin "tamla'ul-miizaan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_15_1
+ex:Frasa_15_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Hak_Seorang_Muslim_Atas_Muslim_Lainnya ;
+              rel:munculDalam ex:Hadis_15 ;
+              rel:jumlahKarakterArab 17 ;
+              rel:terjemahan "Hak seorang muslim"@id ;
+              rel:teksArab "حَقُّ الْمُسْلِمِ"@ar ;
+              rel:teksLatin "Haqqul-muslimi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_15_2
+ex:Frasa_15_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Hak_Seorang_Muslim_Atas_Muslim_Lainnya ;
+              rel:munculDalam ex:Hadis_15 ;
+              rel:jumlahKarakterArab 17 ;
+              rel:terjemahan "atas muslim lainnya"@id ;
+              rel:teksArab "عَلَى الْمُسْلِمِ"@ar ;
+              rel:teksLatin "'alal-muslimi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_15_3
+ex:Frasa_15_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Hak_Seorang_Muslim_Atas_Muslim_Lainnya ;
+              rel:munculDalam ex:Hadis_15 ;
+              rel:jumlahKarakterArab 5 ;
+              rel:terjemahan "ada enam"@id ;
+              rel:teksArab "سِتٌّ"@ar ;
+              rel:teksLatin "sittun"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_16_1
+ex:Frasa_16_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kezaliman_Diingkari_walau_Hanya_dalam_Hati ;
+              rel:munculDalam ex:Hadis_16 ;
+              rel:jumlahKarakterArab 29 ;
+              rel:terjemahan "Barangsiapa di antara kalian melihat kemungkaran"@id ;
+              rel:teksArab "مَنْ رَأَى مِنْكُمْ مُنْكَرًا"@ar ;
+              rel:teksLatin "Man ra'a minkum munkaran"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_16_2
+ex:Frasa_16_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kezaliman_Diingkari_walau_Hanya_dalam_Hati ;
+              rel:munculDalam ex:Hadis_16 ;
+              rel:jumlahKarakterArab 24 ;
+              rel:terjemahan "hendaklah ia mengubahnya dengan tangannya"@id ;
+              rel:teksArab "فَلْيُغَيِّرْهُ بِيَدِهِ"@ar ;
+              rel:teksLatin "fal-yughayyirhu biyadihi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_16_3
+ex:Frasa_16_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kezaliman_Diingkari_walau_Hanya_dalam_Hati ;
+              rel:munculDalam ex:Hadis_16 ;
+              rel:jumlahKarakterArab 36 ;
+              rel:terjemahan "jika tidak mampu, maka dengan lisannya"@id ;
+              rel:teksArab "فَإِنْ لَمْ يَسْتَطِعْ fabilisaanihi"@ar ;
+              rel:teksLatin "fa in lam yastathi' fabilisaanihi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_16_4
+ex:Frasa_16_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kezaliman_Diingkari_walau_Hanya_dalam_Hati ;
+              rel:munculDalam ex:Hadis_16 ;
+              rel:jumlahKarakterArab 34 ;
+              rel:terjemahan "jika tidak mampu, maka dengan hatinya"@id ;
+              rel:teksArab "فَإِنْ لَمْ يَسْتَطِعْ fabiqalbihi"@ar ;
+              rel:teksLatin "fa in lam yastathi' fabiqalbihi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_16_5
+ex:Frasa_16_5 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kezaliman_Diingkari_walau_Hanya_dalam_Hati ;
+              rel:munculDalam ex:Hadis_16 ;
+              rel:jumlahKarakterArab 28 ;
+              rel:terjemahan "dan itulah selemah-lemah iman"@id ;
+              rel:teksArab "وَذَلِكَ أَضْعَفُ الإِيمَانِ"@ar ;
+              rel:teksLatin "wa dzaalika adh'aful-iimaan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_17_1
+ex:Frasa_17_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Larangan_Saling_Hasad ;
+              rel:munculDalam ex:Hadis_17 ;
+              rel:jumlahKarakterArab 15 ;
+              rel:terjemahan "Janganlah kalian saling hasad"@id ;
+              rel:teksArab "لاَ تَحَاسَدُوا"@ar ;
+              rel:teksLatin "Laa tahaasaduu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_17_2
+ex:Frasa_17_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Larangan_Saling_Hasad ;
+              rel:munculDalam ex:Hadis_17 ;
+              rel:jumlahKarakterArab 17 ;
+              rel:terjemahan "janganlah saling membenci"@id ;
+              rel:teksArab "وَلاَ تَبَاغَضُوا"@ar ;
+              rel:teksLatin "wa laa tabaaghadhuu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_17_3
+ex:Frasa_17_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Larangan_Saling_Hasad ;
+              rel:munculDalam ex:Hadis_17 ;
+              rel:jumlahKarakterArab 17 ;
+              rel:terjemahan "janganlah saling memutus hubungan"@id ;
+              rel:teksArab "وَلاَ تَقَاطَعُوا"@ar ;
+              rel:teksLatin "wa laa taqaatha'uu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_17_4
+ex:Frasa_17_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Larangan_Saling_Hasad ;
+              rel:munculDalam ex:Hadis_17 ;
+              rel:jumlahKarakterArab 36 ;
+              rel:terjemahan "dan jadilah kalian hamba-hamba Allah yang bersaudara"@id ;
+              rel:teksArab "وَكُونُوا عِبَادَ اللَّهِ إِخْوَانًا"@ar ;
+              rel:teksLatin "wa kuunuu 'ibaadallahi ikhwaanaa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_18_1
+ex:Frasa_18_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbakti_Kepada_Orang_Tua ;
+              rel:munculDalam ex:Hadis_18 ;
+              rel:jumlahKarakterArab 14 ;
+              rel:terjemahan "Ridha Allah"@id ;
+              rel:teksArab "رِضَا الرَّبِّ"@ar ;
+              rel:teksLatin "Ridhar-rabbi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_18_2
+ex:Frasa_18_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbakti_Kepada_Orang_Tua ;
+              rel:munculDalam ex:Hadis_18 ;
+              rel:jumlahKarakterArab 20 ;
+              rel:terjemahan "terletak pada ridha orang tua"@id ;
+              rel:teksArab "فِي رِضَا الْوَالِدِ"@ar ;
+              rel:teksLatin "fii ridhal-waalid"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_18_3
+ex:Frasa_18_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbakti_Kepada_Orang_Tua ;
+              rel:munculDalam ex:Hadis_18 ;
+              rel:jumlahKarakterArab 17 ;
+              rel:terjemahan "dan murka Allah"@id ;
+              rel:teksArab "وَسَخَطُ الرَّبِّ"@ar ;
+              rel:teksLatin "wa sakhathur-rabbi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_18_4
+ex:Frasa_18_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Berbakti_Kepada_Orang_Tua ;
+              rel:munculDalam ex:Hadis_18 ;
+              rel:jumlahKarakterArab 21 ;
+              rel:terjemahan "terletak pada murka orang tua"@id ;
+              rel:teksArab "فِي سَخَطِ الْوَالِدِ"@ar ;
+              rel:teksLatin "fii sakhathil-waalid"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_1
+ex:Frasa_19_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 21 ;
+              rel:terjemahan "Perumpamaan kaum mukminin"@id ;
+              rel:teksArab "مَثَلُ الْمُؤْمِنِينَ"@ar ;
+              rel:teksLatin "Matsalul-mu'miniina"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_2
+ex:Frasa_19_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 16 ;
+              rel:terjemahan "dalam saling mencintai"@id ;
+              rel:teksArab "فِي تَوَادِّهِمْ"@ar ;
+              rel:teksLatin "fii tawaaddihim"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_3
+ex:Frasa_19_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 15 ;
+              rel:terjemahan "saling mengasihi"@id ;
+              rel:teksArab "وَتَرَاحُمِهِمْ"@ar ;
+              rel:teksLatin "wa taraahumihim"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_4
+ex:Frasa_19_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 15 ;
+              rel:terjemahan "dan saling menyayangi"@id ;
+              rel:teksArab "وَتَعَاطُفِهِمْ"@ar ;
+              rel:teksLatin "wa ta'aathufihim"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_5
+ex:Frasa_19_5 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 16 ;
+              rel:terjemahan "adalah seperti satu tubuh"@id ;
+              rel:teksArab "مَثَلُ الْجَسَدِ"@ar ;
+              rel:teksLatin "matsalul-jasadi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_6
+ex:Frasa_19_6 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 28 ;
+              rel:terjemahan "jika satu bagian merasa sakit"@id ;
+              rel:teksArab "إِذَا اشْتَكَى مِنْهُ عُضْوٌ"@ar ;
+              rel:teksLatin "idzasy-takaa minhu 'udhwun"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_7
+ex:Frasa_19_7 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 31 ;
+              rel:terjemahan "maka seluruh tubuh akan ikut merasakannya"@id ;
+              rel:teksArab "تَدَاعَى لَهُ سَائِرُ الْجَسَدِ"@ar ;
+              rel:teksLatin "tadaa'aa lahu saa'irul-jasadi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_19_8
+ex:Frasa_19_8 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+              rel:munculDalam ex:Hadis_19 ;
+              rel:jumlahKarakterArab 23 ;
+              rel:terjemahan "dengan tidak bisa tidur dan demam"@id ;
+              rel:teksArab "بِالسَّهَرِ وَالْحُمَّى"@ar ;
+              rel:teksLatin "bis-sahari wal-hummaa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_1_1
+ex:Frasa_1_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Niat_dan_Ikhlas ;
+             rel:munculDalam ex:Hadis_1 ;
+             rel:jumlahKarakterArab 20 ;
+             rel:terjemahan "Sesungguhnya amalan itu"@id ;
+             rel:teksArab "إِنَّمَا الأَعْمَالُ"@ar ;
+             rel:teksLatin "Innamal a'malu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_1_2
+ex:Frasa_1_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Niat_dan_Ikhlas ;
+             rel:munculDalam ex:Hadis_1 ;
+             rel:jumlahKarakterArab 13 ;
+             rel:terjemahan "tergantung pada niatnya"@id ;
+             rel:teksArab "بِالنِّيَّاتِ"@ar ;
+             rel:teksLatin "bin-niyyaat"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_1_3
+ex:Frasa_1_3 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Niat_dan_Ikhlas ;
+             rel:munculDalam ex:Hadis_1 ;
+             rel:jumlahKarakterArab 10 ;
+             rel:terjemahan "dan sesungguhnya"@id ;
+             rel:teksArab "وَإِنَّمَا"@ar ;
+             rel:teksLatin "wa innamaa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_1_4
+ex:Frasa_1_4 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Niat_dan_Ikhlas ;
+             rel:munculDalam ex:Hadis_1 ;
+             rel:jumlahKarakterArab 15 ;
+             rel:terjemahan "setiap orang"@id ;
+             rel:teksArab "لِكُلِّ امْرِئٍ"@ar ;
+             rel:teksLatin "likullimri'in"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_1_5
+ex:Frasa_1_5 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Niat_dan_Ikhlas ;
+             rel:munculDalam ex:Hadis_1 ;
+             rel:jumlahKarakterArab 9 ;
+             rel:terjemahan "apa yang ia niatkan"@id ;
+             rel:teksArab "مَا نَوَى"@ar ;
+             rel:teksLatin "maa nawaa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_20_1
+ex:Frasa_20_1 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Allah_Tidak_Melihat_Bentuk_Rupamu ;
+              rel:munculDalam ex:Hadis_20 ;
+              rel:jumlahKarakterArab 26 ;
+              rel:terjemahan "Sesungguhnya Allah tidak melihat"@id ;
+              rel:teksArab "إِنَّ اللَّهَ لاَ يَنْظُرُ"@ar ;
+              rel:teksLatin "Innallaha laa yandzuru"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_20_2
+ex:Frasa_20_2 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Allah_Tidak_Melihat_Bentuk_Rupamu ;
+              rel:munculDalam ex:Hadis_20 ;
+              rel:jumlahKarakterArab 32 ;
+              rel:terjemahan "kepada rupa dan harta kalian"@id ;
+              rel:teksArab "إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ"@ar ;
+              rel:teksLatin "ilaa shuwarikum wa amwaalikum"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_20_3
+ex:Frasa_20_3 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Allah_Tidak_Melihat_Bentuk_Rupamu ;
+              rel:munculDalam ex:Hadis_20 ;
+              rel:jumlahKarakterArab 17 ;
+              rel:terjemahan "melainkan Dia melihat"@id ;
+              rel:teksArab "وَلَكِنْ يَنْظُرُ"@ar ;
+              rel:teksLatin "wa laakin yandzuru"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_20_4
+ex:Frasa_20_4 rdf:type owl:NamedIndividual ,
+                       ex:Frasa ;
+              rel:membahasTopik ex:Allah_Tidak_Melihat_Bentuk_Rupamu ;
+              rel:munculDalam ex:Hadis_20 ;
+              rel:jumlahKarakterArab 33 ;
+              rel:terjemahan "kepada hati dan amal kalian"@id ;
+              rel:teksArab "إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ"@ar ;
+              rel:teksLatin "ilaa quluubikum wa a'maalikum"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_1
+ex:Frasa_2_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 17 ;
+             rel:terjemahan "Islam dibangun"@id ;
+             rel:teksArab "بُنِيَ الإِسْلامُ"@ar ;
+             rel:teksLatin "Buniyal islamu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_2
+ex:Frasa_2_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 12 ;
+             rel:terjemahan "di atas lima perkara"@id ;
+             rel:teksArab "عَلَى خَمْسٍ"@ar ;
+             rel:teksLatin "'ala khamsin"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_3
+ex:Frasa_2_3 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 9 ;
+             rel:terjemahan "bersaksi"@id ;
+             rel:teksArab "شَهَادَةِ"@ar ;
+             rel:teksLatin "syahaadati"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_4
+ex:Frasa_2_4 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 30 ;
+             rel:terjemahan "bahwa tidak ada tuhan yang berhak disembah selain Allah"@id ;
+             rel:teksArab "أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ"@ar ;
+             rel:teksLatin "an laa ilaaha illallah"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_5
+ex:Frasa_2_5 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 34 ;
+             rel:terjemahan "dan Muhammad adalah utusan Allah"@id ;
+             rel:teksArab "وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ"@ar ;
+             rel:teksLatin "wa anna muhammadan rasuulullah"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_6
+ex:Frasa_2_6 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 20 ;
+             rel:terjemahan "mendirikan shalat"@id ;
+             rel:teksArab "وَإِقَامِ الصَّلاَةِ"@ar ;
+             rel:teksLatin "wa iqaamis-shalaati"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_7
+ex:Frasa_2_7 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 21 ;
+             rel:terjemahan "menunaikan zakat"@id ;
+             rel:teksArab "وَإِيتَاءِ الزَّكَاةِ"@ar ;
+             rel:teksLatin "wa iitaa'iz-zakaati"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_8
+ex:Frasa_2_8 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 16 ;
+             rel:terjemahan "haji ke Baitullah"@id ;
+             rel:teksArab "وَحَجِّ البَيْتِ"@ar ;
+             rel:teksLatin "wa hajjil-baiti"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_2_9
+ex:Frasa_2_9 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Rukun_Islam ;
+             rel:munculDalam ex:Hadis_2 ;
+             rel:jumlahKarakterArab 18 ;
+             rel:terjemahan "dan puasa Ramadhan"@id ;
+             rel:teksArab "وَصَوْمِ رَمَضَانَ"@ar ;
+             rel:teksLatin "wa shaumi ramadhaan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_1
+ex:Frasa_3_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 16 ;
+             rel:terjemahan "Sesungguhnya salah seorang dari kalian"@id ;
+             rel:teksArab "إِنَّ أَحَدَكُمْ"@ar ;
+             rel:teksLatin "Inna ahadakum"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_2
+ex:Frasa_3_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 17 ;
+             rel:terjemahan "dikumpulkan penciptaannya"@id ;
+             rel:teksArab "يُجْمَعُ خَلْقُهُ"@ar ;
+             rel:teksLatin "yujma'u khalquhu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_3
+ex:Frasa_3_3 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 18 ;
+             rel:terjemahan "dalam perut ibunya"@id ;
+             rel:teksArab "فِي بَطْنِ أُمِّهِ"@ar ;
+             rel:teksLatin "fii bathni ummihi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_4
+ex:Frasa_3_4 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 28 ;
+             rel:terjemahan "selama 40 hari berwujud nutfah"@id ;
+             rel:teksArab "أَرْبَعِينَ يَوْمًا نُطْفَةً"@ar ;
+             rel:teksLatin "arba'iina yauman nuthfatan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_5
+ex:Frasa_3_5 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 22 ;
+             rel:terjemahan "kemudian menjadi segumpal darah"@id ;
+             rel:teksArab "ثُمَّ يَكُونُ عَلَقَةً"@ar ;
+             rel:teksLatin "thumma yakuunu 'alaqatan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_6
+ex:Frasa_3_6 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 13 ;
+             rel:terjemahan "selama itu pula"@id ;
+             rel:teksArab "مِثْلَ ذَلِكَ"@ar ;
+             rel:teksLatin "mithla dzaalika"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_7
+ex:Frasa_3_7 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 22 ;
+             rel:terjemahan "kemudian menjadi segumpal daging"@id ;
+             rel:teksArab "ثُمَّ يَكُونُ مُضْغَةً"@ar ;
+             rel:teksLatin "thumma yakuunu mudhghatan"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_3_8
+ex:Frasa_3_8 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Penciptaan_Manusia ;
+             rel:munculDalam ex:Hadis_3 ;
+             rel:jumlahKarakterArab 13 ;
+             rel:terjemahan "selama itu pula"@id ;
+             rel:teksArab "مِثْلَ ذَلِكَ"@ar ;
+             rel:teksLatin "mithla dzaalika"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_4_1
+ex:Frasa_4_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik <http://proyekakhir.ac.id/concept/Bid'ah_dan_Menyelisihi_Sunnah> ;
+             rel:munculDalam ex:Hadis_4 ;
+             rel:jumlahKarakterArab 13 ;
+             rel:terjemahan "Barangsiapa yang mengada-adakan sesuatu hal yang baru"@id ;
+             rel:teksArab "مَنْ أَحْدَثَ"@ar ;
+             rel:teksLatin "Man ahdatsa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_4_2
+ex:Frasa_4_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik <http://proyekakhir.ac.id/concept/Bid'ah_dan_Menyelisihi_Sunnah> ;
+             rel:munculDalam ex:Hadis_4 ;
+             rel:jumlahKarakterArab 19 ;
+             rel:terjemahan "dalam perkara agama kami ini"@id ;
+             rel:teksArab "فِي أَمْرِنَا هَذَا"@ar ;
+             rel:teksLatin "fii amrinaa hadza"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_4_3
+ex:Frasa_4_3 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik <http://proyekakhir.ac.id/concept/Bid'ah_dan_Menyelisihi_Sunnah> ;
+             rel:munculDalam ex:Hadis_4 ;
+             rel:jumlahKarakterArab 17 ;
+             rel:terjemahan "yang tidak ada dasar darinya"@id ;
+             rel:teksArab "مَا لَيْسَ مِنْهُ"@ar ;
+             rel:teksLatin "maa laisa minhu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_4_4
+ex:Frasa_4_4 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik <http://proyekakhir.ac.id/concept/Bid'ah_dan_Menyelisihi_Sunnah> ;
+             rel:munculDalam ex:Hadis_4 ;
+             rel:jumlahKarakterArab 12 ;
+             rel:terjemahan "maka ia tertolak"@id ;
+             rel:teksArab "فَهُوَ رَدٌّ"@ar ;
+             rel:teksLatin "fahuwa raddun"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_5_1
+ex:Frasa_5_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Halal_dan_Haram ;
+             rel:munculDalam ex:Hadis_5 ;
+             rel:jumlahKarakterArab 23 ;
+             rel:terjemahan "Sesungguhnya yang halal itu jelas"@id ;
+             rel:teksArab "إِنَّ الْحَلالَ بَيِّنٌ"@ar ;
+             rel:teksLatin "Innal halaala bayyinun"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_5_2
+ex:Frasa_5_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Halal_dan_Haram ;
+             rel:munculDalam ex:Hadis_5 ;
+             rel:jumlahKarakterArab 26 ;
+             rel:terjemahan "dan sesungguhnya yang haram itu jelas"@id ;
+             rel:teksArab "وَإِنَّ الْحَرَامَ بَيِّنٌ"@ar ;
+             rel:teksLatin "wa innal haraama bayyinun"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_5_3
+ex:Frasa_5_3 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Halal_dan_Haram ;
+             rel:munculDalam ex:Hadis_5 ;
+             rel:jumlahKarakterArab 13 ;
+             rel:terjemahan "dan di antara keduanya"@id ;
+             rel:teksArab "وَبَيْنَهُمَا"@ar ;
+             rel:teksLatin "wa bainahumaa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_5_4
+ex:Frasa_5_4 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Halal_dan_Haram ;
+             rel:munculDalam ex:Hadis_5 ;
+             rel:jumlahKarakterArab 21 ;
+             rel:terjemahan "terdapat perkara-perkara syubhat"@id ;
+             rel:teksArab "أُمُورٌ مُشْتَبِهَاتٌ"@ar ;
+             rel:teksLatin "umuurun musytabihaatun"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_6_1
+ex:Frasa_6_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Agama_adalah_Nasihat ;
+             rel:munculDalam ex:Hadis_6 ;
+             rel:jumlahKarakterArab 9 ;
+             rel:terjemahan "Agama itu"@id ;
+             rel:teksArab "الدِّيْنُ"@ar ;
+             rel:teksLatin "Ad-diinu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_6_2
+ex:Frasa_6_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Agama_adalah_Nasihat ;
+             rel:munculDalam ex:Hadis_6 ;
+             rel:jumlahKarakterArab 13 ;
+             rel:terjemahan "adalah nasihat"@id ;
+             rel:teksArab "النَّصِيْحَةُ"@ar ;
+             rel:teksLatin "an-nashiihah"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_7_1
+ex:Frasa_7_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Meninggalkan_yang_Tidak_Bermanfaat ;
+             rel:munculDalam ex:Hadis_7 ;
+             rel:jumlahKarakterArab 30 ;
+             rel:terjemahan "Di antara tanda kebaikan keislaman seseorang"@id ;
+             rel:teksArab "مِنْ حُسْنِ إِسْلامِ الْمَرْءِ"@ar ;
+             rel:teksLatin "Min husni islaamil mar'i"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_7_2
+ex:Frasa_7_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Meninggalkan_yang_Tidak_Bermanfaat ;
+             rel:munculDalam ex:Hadis_7 ;
+             rel:jumlahKarakterArab 8 ;
+             rel:terjemahan "adalah meninggalkannya"@id ;
+             rel:teksArab "تَرْكُهُ"@ar ;
+             rel:teksLatin "tarkuhu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_7_3
+ex:Frasa_7_3 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Meninggalkan_yang_Tidak_Bermanfaat ;
+             rel:munculDalam ex:Hadis_7 ;
+             rel:jumlahKarakterArab 17 ;
+             rel:terjemahan "hal-hal yang tidak bermanfaat baginya"@id ;
+             rel:teksArab "مَا لاَ يَعْنِيهِ"@ar ;
+             rel:teksLatin "maa laa ya'niihi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_8_1
+ex:Frasa_8_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Menahan_Amarah ;
+             rel:munculDalam ex:Hadis_8 ;
+             rel:jumlahKarakterArab 3 ;
+             rel:terjemahan "Janganlah"@id ;
+             rel:teksArab "لاَ"@ar ;
+             rel:teksLatin "Laa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_8_2
+ex:Frasa_8_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Menahan_Amarah ;
+             rel:munculDalam ex:Hadis_8 ;
+             rel:jumlahKarakterArab 8 ;
+             rel:terjemahan "kamu marah"@id ;
+             rel:teksArab "تَغْضَبْ"@ar ;
+             rel:teksLatin "taghdhab"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_9_1
+ex:Frasa_9_1 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Malu_adalah_Sebagian_dari_Iman ;
+             rel:munculDalam ex:Hadis_9 ;
+             rel:jumlahKarakterArab 30 ;
+             rel:terjemahan "Sesungguhnya di antara yang didapati oleh manusia"@id ;
+             rel:teksArab "إِنَّ مِمَّا أَدْرَكَ النَّاسُ"@ar ;
+             rel:teksLatin "Inna mimmaa adrakan-naasu"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_9_2
+ex:Frasa_9_2 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Malu_adalah_Sebagian_dari_Iman ;
+             rel:munculDalam ex:Hadis_9 ;
+             rel:jumlahKarakterArab 34 ;
+             rel:terjemahan "dari perkataan kenabian pertama"@id ;
+             rel:teksArab "مِنْ كَلاَمِ النُّبُوَّةِ الأُولَى"@ar ;
+             rel:teksLatin "min kalaamin-nubuwwatil uulaa"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_9_3
+ex:Frasa_9_3 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Malu_adalah_Sebagian_dari_Iman ;
+             rel:munculDalam ex:Hadis_9 ;
+             rel:jumlahKarakterArab 19 ;
+             rel:terjemahan "Jika kamu tidak malu"@id ;
+             rel:teksArab "إِذَا لَمْ تَسْتَحِ"@ar ;
+             rel:teksLatin "idzaa lam tastahi"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Frasa_9_4
+ex:Frasa_9_4 rdf:type owl:NamedIndividual ,
+                      ex:Frasa ;
+             rel:membahasTopik ex:Malu_adalah_Sebagian_dari_Iman ;
+             rel:munculDalam ex:Hadis_9 ;
+             rel:jumlahKarakterArab 20 ;
+             rel:terjemahan "maka berbuatlah sesukamu"@id ;
+             rel:teksArab "فَاصْنَعْ مَا شِئْتَ"@ar ;
+             rel:teksLatin "fashna' maa syi'ta"@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_1
+ex:Hadis_1 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Umar_bin_Khattab ;
+           rel:membahasTopik ex:Niat_dan_Ikhlas ;
+           rel:memilikiFrasa ex:Frasa_1_1 ,
+                             ex:Frasa_1_2 ,
+                             ex:Frasa_1_3 ,
+                             ex:Frasa_1_4 ,
+                             ex:Frasa_1_5 ;
+           rel:jumlahKarakterArab 72 ;
+           rel:terjemahan "Sesungguhnya amalan itu tergantung pada niatnya, dan sesungguhnya setiap orang akan mendapatkan apa yang ia niatkan."@id ;
+           rel:teksArab "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى"@ar ;
+           rel:teksLatin "Innamal a'malu bin-niyyaat, wa innamaa likullimri'in maa nawaa."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_10
+ex:Hadis_10 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Nawas_bin_Saman ;
+            rel:membahasTopik ex:Kebaikan_dan_Dosa ;
+            rel:memilikiFrasa ex:Frasa_10_1 ,
+                              ex:Frasa_10_2 ,
+                              ex:Frasa_10_3 ,
+                              ex:Frasa_10_4 ;
+            rel:jumlahKarakterArab 104 ;
+            rel:terjemahan "Kebaikan adalah akhlak yang mulia, dan dosa adalah apa yang menggelisahkan hatimu dan engkau benci jika hal itu diketahui orang lain."@id ;
+            rel:teksArab "الْبِرُّ حُسْنُ الْخُلُقِ، وَالإِثْمُ مَا حَاكَ فِي نَفْسِكَ وَكَرِهْتَ أَنْ يَطَّلِعَ عَلَيْهِ النَّاسُ"@ar ;
+            rel:teksLatin "Al-birru husnul khuluqi, wal-itsmu maa haaka fii nafsika wa karihta an yatthali'a 'alaihin-naasu."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_11
+ex:Hadis_11 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abu_Hurairah ;
+            rel:membahasTopik ex:Tolong_Menolong_dan_Menutup_Aib ;
+            rel:memilikiFrasa ex:Frasa_11_1 ,
+                              ex:Frasa_11_2 ,
+                              ex:Frasa_11_3 ,
+                              ex:Frasa_11_4 ,
+                              ex:Frasa_11_5 ;
+            rel:jumlahKarakterArab 122 ;
+            rel:terjemahan "Barangsiapa yang melepaskan satu kesusahan dunia dari seorang mukmin, Allah akan melepaskan darinya satu kesusahan di hari kiamat."@id ;
+            rel:teksArab "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ"@ar ;
+            rel:teksLatin "Man naffasa 'an mu'minin kurbatan min kurabid-dunya naffasallahu 'anhu kurbatan min kurabi yaumil-qiyaamah."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_12
+ex:Hadis_12 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abu_Hurairah ;
+            rel:membahasTopik ex:Amalan_Sunnah_dan_Kewalian ;
+            rel:memilikiFrasa ex:Frasa_12_1 ,
+                              ex:Frasa_12_2 ;
+            rel:jumlahKarakterArab 53 ;
+            rel:terjemahan "Barangsiapa memusuhi wali-Ku, maka sungguh Aku telah mengumumkan perang kepadanya."@id ;
+            rel:teksArab "مَنْ عَادَى لِي وَلِيًّا فَقَدْ آذَنْتُهُ بِالْحَرْبِ"@ar ;
+            rel:teksLatin "Man 'aada lii waliyyan faqad aadzantuhu bil-harb."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_13
+ex:Hadis_13 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abu_Hurairah ;
+            rel:membahasTopik ex:Berbicara_Baik_atau_Diam ;
+            rel:memilikiFrasa ex:Frasa_13_1 ,
+                              ex:Frasa_13_2 ,
+                              ex:Frasa_13_3 ,
+                              ex:Frasa_13_4 ;
+            rel:jumlahKarakterArab 84 ;
+            rel:terjemahan "Barangsiapa beriman kepada Allah dan hari akhir, hendaklah ia berkata baik atau diam."@id ;
+            rel:teksArab "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ"@ar ;
+            rel:teksLatin "Man kaana yu'minu billahi wal-yaumil-aakhiri fal-yaqul khairan au liyashmut."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_14
+ex:Hadis_14 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abu_Malik_Al-Asyari ;
+            rel:membahasTopik ex:Keutamaan_Bersuci_dan_Berdzikir ;
+            rel:memilikiFrasa ex:Frasa_14_1 ,
+                              ex:Frasa_14_2 ,
+                              ex:Frasa_14_3 ,
+                              ex:Frasa_14_4 ;
+            rel:jumlahKarakterArab 69 ;
+            rel:terjemahan "Bersuci itu sebagian dari iman, dan ucapan Alhamdulillah memenuhi timbangan."@id ;
+            rel:teksArab "الطُّهُورُ شَطْرُ الإِيمَانِ، وَالْحَمْدُ لِلَّهِ تَمْلأُ الْمِيزَانَ"@ar ;
+            rel:teksLatin "Ath-thuhuuru syathrul-iimaan, wal-hamdu lillaahi tamla'ul-miizaan."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_15
+ex:Hadis_15 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abu_Hurairah ;
+            rel:membahasTopik ex:Hak_Seorang_Muslim_Atas_Muslim_Lainnya ;
+            rel:memilikiFrasa ex:Frasa_15_1 ,
+                              ex:Frasa_15_2 ,
+                              ex:Frasa_15_3 ;
+            rel:jumlahKarakterArab 41 ;
+            rel:terjemahan "Hak seorang muslim atas muslim lainnya ada enam."@id ;
+            rel:teksArab "حَقُّ الْمُسْلِمِ عَلَى الْمُسْلِمِ سِتٌّ"@ar ;
+            rel:teksLatin "Haqqul-muslimi 'alal-muslimi sittun."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_16
+ex:Hadis_16 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abu_Said_Al-Khudri ;
+            rel:membahasTopik ex:Kezaliman_Diingkari_walau_Hanya_dalam_Hati ;
+            rel:memilikiFrasa ex:Frasa_16_1 ,
+                              ex:Frasa_16_2 ,
+                              ex:Frasa_16_3 ,
+                              ex:Frasa_16_4 ,
+                              ex:Frasa_16_5 ;
+            rel:jumlahKarakterArab 158 ;
+            rel:terjemahan "Barangsiapa di antara kalian melihat kemungkaran, hendaklah ia mengubahnya dengan tangannya; jika tidak mampu, maka dengan lisannya; jika tidak mampu, maka dengan hatinya, dan itulah selemah-lemah iman."@id ;
+            rel:teksArab "مَنْ رَأَى مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِلِسَانِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ وَذَلِكَ أَضْعَفُ الإِيمَانِ"@ar ;
+            rel:teksLatin "Man ra'a minkum munkaran fal-yughayyirhu biyadihi, fa in lam yastathi' fabilisaanihi, fa in lam yastathi' fabiqalbihi wa dzaalika adh'aful-iimaan."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_17
+ex:Hadis_17 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Anas_bin_Malik ;
+            rel:membahasTopik ex:Larangan_Saling_Hasad ;
+            rel:memilikiFrasa ex:Frasa_17_1 ,
+                              ex:Frasa_17_2 ,
+                              ex:Frasa_17_3 ,
+                              ex:Frasa_17_4 ;
+            rel:jumlahKarakterArab 88 ;
+            rel:terjemahan "Janganlah kalian saling hasad, janganlah saling membenci, janganlah saling memutus hubungan, dan jadilah kalian hamba-hamba Allah yang bersaudara."@id ;
+            rel:teksArab "لاَ تَحَاسَدُوا وَلاَ تَبَاغَضُوا وَلاَ تَقَاطَعُوا وَكُونُوا عِبَادَ اللَّهِ إِخْوَانًا"@ar ;
+            rel:teksLatin "Laa tahaasaduu wa laa tabaaghadhuu wa laa taqaatha'uu wa kuunuu 'ibaadallahi ikhwaanaa."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_18
+ex:Hadis_18 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abdullah_bin_Masud ;
+            rel:membahasTopik ex:Berbakti_Kepada_Orang_Tua ;
+            rel:memilikiFrasa ex:Frasa_18_1 ,
+                              ex:Frasa_18_2 ,
+                              ex:Frasa_18_3 ,
+                              ex:Frasa_18_4 ;
+            rel:jumlahKarakterArab 76 ;
+            rel:terjemahan "Ridha Allah terletak pada ridha orang tua, dan murka Allah terletak pada murka orang tua."@id ;
+            rel:teksArab "رِضَا الرَّبِّ فِي رِضَا الْوَالِدِ، وَسَخَطُ الرَّبِّ فِي سَخَطِ الْوَالِدِ"@ar ;
+            rel:teksLatin "Ridhar-rabbi fii ridhal-waalid, wa sakhathur-rabbi fii sakhathil-waalid."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_19
+ex:Hadis_19 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Numan_bin_Basyir ;
+            rel:membahasTopik ex:Kasih_Sayang_Sesama_Muslim ;
+            rel:memilikiFrasa ex:Frasa_19_1 ,
+                              ex:Frasa_19_2 ,
+                              ex:Frasa_19_3 ,
+                              ex:Frasa_19_4 ,
+                              ex:Frasa_19_5 ,
+                              ex:Frasa_19_6 ,
+                              ex:Frasa_19_7 ,
+                              ex:Frasa_19_8 ;
+            rel:jumlahKarakterArab 172 ;
+            rel:terjemahan "Perumpamaan kaum mukminin dalam saling mencintai, saling mengasihi, dan saling menyayangi adalah seperti satu tubuh; jika satu bagian merasa sakit, maka seluruh tubuh akan ikut merasakannya dengan tidak bisa tidur and demam."@id ;
+            rel:teksArab "مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ إِذَا اشْتَكَى مِنْهُ عُضْوٌ تَدَاعَى لَهُ سَائِرُ الْجَسَدِ بِالسَّهَرِ وَالْحُمَّى"@ar ;
+            rel:teksLatin "Matsalul-mu'miniina fii tawaaddihim wa taraahumihim wa ta'aathufihim matsalul-jasadi idzasy-takaa minhu 'udhwun tadaa'aa lahu saa'irul-jasadi bis-sahari wal-hummaa."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_2
+ex:Hadis_2 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Ibnu_Umar ;
+           rel:membahasTopik ex:Rukun_Islam ;
+           rel:memilikiFrasa ex:Frasa_2_1 ,
+                             ex:Frasa_2_2 ,
+                             ex:Frasa_2_3 ,
+                             ex:Frasa_2_4 ,
+                             ex:Frasa_2_5 ,
+                             ex:Frasa_2_6 ,
+                             ex:Frasa_2_7 ,
+                             ex:Frasa_2_8 ,
+                             ex:Frasa_2_9 ;
+           rel:jumlahKarakterArab 190 ;
+           rel:terjemahan "Islam dibangun di atas lima perkara: bersaksi bahwa tidak ada tuhan yang berhak disembah selain Allah dan Muhammad adalah utusan Allah, mendirikan shalat, menunaikan zakat, haji ke Baitullah, dan puasa Ramadhan."@id ;
+           rel:teksArab "بُنِيَ الإِسْلامُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلاَةِ، وَإِيتَاءِ الزَّكَاةِ، وَحَجِّ البَيْتِ، وَصَوْمِ رَمَضَانَ"@ar ;
+           rel:teksLatin "Buniyal islamu 'ala khamsin: syahaadati an laa ilaaha illallah wa anna muhammadan rasuulullah, wa iqaamis-shalaati, wa iitaa'iz-zakaati, wa hajjil-baiti, wa shaumi ramadhaan."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_20
+ex:Hadis_20 rdf:type owl:NamedIndividual ,
+                     ex:Hadis ;
+            rel:diriwayatkanOleh ex:Abu_Hurairah ;
+            rel:membahasTopik ex:Allah_Tidak_Melihat_Bentuk_Rupamu ;
+            rel:memilikiFrasa ex:Frasa_20_1 ,
+                              ex:Frasa_20_2 ,
+                              ex:Frasa_20_3 ,
+                              ex:Frasa_20_4 ;
+            rel:jumlahKarakterArab 112 ;
+            rel:terjemahan "Sesungguhnya Allah tidak melihat kepada rupa dan harta kalian, melainkan Dia melihat kepada hati dan amal kalian."@id ;
+            rel:teksArab "إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ، وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ"@ar ;
+            rel:teksLatin "Innallaha laa yandzuru ilaa shuwarikum wa amwaalikum, wa laakin yandzuru ilaa quluubikum wa a'maalikum."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_3
+ex:Hadis_3 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Ibnu_Masud ;
+           rel:membahasTopik ex:Penciptaan_Manusia ;
+           rel:memilikiFrasa ex:Frasa_3_1 ,
+                             ex:Frasa_3_2 ,
+                             ex:Frasa_3_3 ,
+                             ex:Frasa_3_4 ,
+                             ex:Frasa_3_5 ,
+                             ex:Frasa_3_6 ,
+                             ex:Frasa_3_7 ,
+                             ex:Frasa_3_8 ;
+           rel:jumlahKarakterArab 158 ;
+           rel:terjemahan "Sesungguhnya salah seorang dari kalian dikumpulkan penciptaannya dalam perut ibunya selama 40 hari berwujud nutfah (mani), kemudian menjadi 'alaqah (segumpal darah) selama itu pula, kemudian menjadi mudhghah (segumpal daging) selama itu pula."@id ;
+           rel:teksArab "إِنَّ أَحَدَكُمْ يُجْمَعُ خَلْقُهُ فِي بَطْنِ أُمِّهِ أَرْبَعِينَ يَوْمًا نُطْفَةً، ثُمَّ يَكُونُ عَلَقَةً مِثْلَ ذَلِكَ، ثُمَّ يَكُونُ مُضْغَةً مِثْلَ ذَلِكَ"@ar ;
+           rel:teksLatin "Inna ahadakum yujma'u khalquhu fii bathni ummihi arba'iina yauman nuthfatan, thumma yakuunu 'alaqatan mithla dzaalika, thumma yakuunu mudhghatan mithla dzaalika."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_4
+ex:Hadis_4 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Aisyah ;
+           rel:membahasTopik <http://proyekakhir.ac.id/concept/Bid'ah_dan_Menyelisihi_Sunnah> ;
+           rel:memilikiFrasa ex:Frasa_4_1 ,
+                             ex:Frasa_4_2 ,
+                             ex:Frasa_4_3 ,
+                             ex:Frasa_4_4 ;
+           rel:jumlahKarakterArab 64 ;
+           rel:terjemahan "Barangsiapa yang mengada-adakan sesuatu hal yang baru dalam perkara agama kami ini yang tidak ada dasar darinya, maka ia tertolak."@id ;
+           rel:teksArab "مَنْ أَحْدَثَ فِي أَمْرِنَا هَذَا مَا لَيْسَ مِنْهُ فَهُوَ رَدٌّ"@ar ;
+           rel:teksLatin "Man ahdatsa fii amrinaa hadza maa laisa minhu fahuwa raddun."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_5
+ex:Hadis_5 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Numan_bin_Basyir ;
+           rel:membahasTopik ex:Halal_dan_Haram ;
+           rel:memilikiFrasa ex:Frasa_5_1 ,
+                             ex:Frasa_5_2 ,
+                             ex:Frasa_5_3 ,
+                             ex:Frasa_5_4 ;
+           rel:jumlahKarakterArab 86 ;
+           rel:terjemahan "Sesungguhnya yang halal itu jelas, dan sesungguhnya yang haram itu jelas, dan di antara keduanya terdapat perkara-perkara syubhat (samar)."@id ;
+           rel:teksArab "إِنَّ الْحَلالَ بَيِّنٌ وَإِنَّ الْحَرَامَ بَيِّنٌ وَبَيْنَهُمَا أُمُورٌ مُشْتَبِهَاتٌ"@ar ;
+           rel:teksLatin "Innal halaala bayyinun wa innal haraama bayyinun wa bainahumaa umuurun musytabihaatun."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_6
+ex:Hadis_6 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Tamim_Ad-Dari ;
+           rel:membahasTopik ex:Agama_adalah_Nasihat ;
+           rel:memilikiFrasa ex:Frasa_6_1 ,
+                             ex:Frasa_6_2 ;
+           rel:jumlahKarakterArab 23 ;
+           rel:terjemahan "Agama adalah nasihat."@id ;
+           rel:teksArab "الدِّيْنُ النَّصِيْحَةُ"@ar ;
+           rel:teksLatin "Ad-diinu an-nashiihah."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_7
+ex:Hadis_7 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Abu_Hurairah ;
+           rel:membahasTopik ex:Meninggalkan_yang_Tidak_Bermanfaat ;
+           rel:memilikiFrasa ex:Frasa_7_1 ,
+                             ex:Frasa_7_2 ,
+                             ex:Frasa_7_3 ;
+           rel:jumlahKarakterArab 57 ;
+           rel:terjemahan "Di antara tanda kebaikan keislaman seseorang adalah meninggalkan hal-hal yang tidak bermanfaat baginya."@id ;
+           rel:teksArab "مِنْ حُسْنِ إِسْلامِ الْمَرْءِ تَرْكُهُ مَا لاَ يَعْنِيهِ"@ar ;
+           rel:teksLatin "Min husni islaamil mar'i tarkuhu maa laa ya'niihi."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_8
+ex:Hadis_8 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Abu_Hurairah ;
+           rel:membahasTopik ex:Menahan_Amarah ;
+           rel:memilikiFrasa ex:Frasa_8_1 ,
+                             ex:Frasa_8_2 ;
+           rel:jumlahKarakterArab 12 ;
+           rel:terjemahan "Janganlah kamu marah."@id ;
+           rel:teksArab "لاَ تَغْضَبْ"@ar ;
+           rel:teksLatin "Laa taghdhab."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hadis_9
+ex:Hadis_9 rdf:type owl:NamedIndividual ,
+                    ex:Hadis ;
+           rel:diriwayatkanOleh ex:Ibnu_Masud ;
+           rel:membahasTopik ex:Malu_adalah_Sebagian_dari_Iman ;
+           rel:memilikiFrasa ex:Frasa_9_1 ,
+                             ex:Frasa_9_2 ,
+                             ex:Frasa_9_3 ,
+                             ex:Frasa_9_4 ;
+           rel:jumlahKarakterArab 107 ;
+           rel:terjemahan "Sesungguhnya di antara perkataan kenabian pertama yang didapati oleh manusia adalah: Jika kamu tidak malu, maka berbuatlah sesukamu."@id ;
+           rel:teksArab "إِنَّ مِمَّا أَدْرَكَ النَّاسُ مِنْ كَلاَمِ النُّبُوَّةِ الأُولَى: إِذَا لَمْ تَسْتَحِ فَاصْنَعْ مَا شِئْتَ"@ar ;
+           rel:teksLatin "Inna mimmaa adrakan-naasu min kalaamin-nubuwwatil uulaa: idzaa lam tastahi fashna' maa syi'ta."@id-latn .
+
+
+###  http://proyekakhir.ac.id/concept/Hak_Seorang_Muslim_Atas_Muslim_Lainnya
+ex:Hak_Seorang_Muslim_Atas_Muslim_Lainnya rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Halal_dan_Haram
+ex:Halal_dan_Haram rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Ibnu_Masud
+ex:Ibnu_Masud rdf:type owl:NamedIndividual ,
+                       ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Ibnu_Umar
+ex:Ibnu_Umar rdf:type owl:NamedIndividual ,
+                      ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Kasih_Sayang_Sesama_Muslim
+ex:Kasih_Sayang_Sesama_Muslim rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Kebaikan_dan_Dosa
+ex:Kebaikan_dan_Dosa rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Keutamaan_Bersuci_dan_Berdzikir
+ex:Keutamaan_Bersuci_dan_Berdzikir rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Kezaliman_Diingkari_walau_Hanya_dalam_Hati
+ex:Kezaliman_Diingkari_walau_Hanya_dalam_Hati rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Larangan_Saling_Hasad
+ex:Larangan_Saling_Hasad rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Malu_adalah_Sebagian_dari_Iman
+ex:Malu_adalah_Sebagian_dari_Iman rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Menahan_Amarah
+ex:Menahan_Amarah rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Meninggalkan_yang_Tidak_Bermanfaat
+ex:Meninggalkan_yang_Tidak_Bermanfaat rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Nawas_bin_Saman
+ex:Nawas_bin_Saman rdf:type owl:NamedIndividual ,
+                            ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Niat_dan_Ikhlas
+ex:Niat_dan_Ikhlas rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Numan_bin_Basyir
+ex:Numan_bin_Basyir rdf:type owl:NamedIndividual ,
+                             ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Penciptaan_Manusia
+ex:Penciptaan_Manusia rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Rukun_Islam
+ex:Rukun_Islam rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Tamim_Ad-Dari
+ex:Tamim_Ad-Dari rdf:type owl:NamedIndividual ,
+                          ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Tolong_Menolong_dan_Menutup_Aib
+ex:Tolong_Menolong_dan_Menutup_Aib rdf:type owl:NamedIndividual .
+
+
+###  http://proyekakhir.ac.id/concept/Umar_bin_Khattab
+ex:Umar_bin_Khattab rdf:type owl:NamedIndividual ,
+                             ex:Perawi .
+
+
+###  http://proyekakhir.ac.id/concept/Bid'ah_dan_Menyelisihi_Sunnah
+<http://proyekakhir.ac.id/concept/Bid'ah_dan_Menyelisihi_Sunnah> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
